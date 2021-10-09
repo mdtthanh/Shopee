@@ -98,3 +98,122 @@
 .header__qr-link:nth-child(2) {
     margin-right: 12px;
 }
+
+/* header__notify */
+
+.header__notify {
+    position: absolute;
+    top: 110%;
+    right: 0;
+    background-color: var(--white-color);
+    border: 1px solid #D3D3D3;
+    display: none;
+    border-radius: 2px;
+    animation: gowth ease-in 0.3s;
+    transform-origin: calc(100%-20px) top;
+    will-change: opacity, transform;
+}
+.header__notify-header {
+    height: 35px;
+    background-color: var(--white-color);
+    cursor: text;
+}
+
+.header__notify-header h3 {
+    margin: 0 0 0 12px;
+    color: #999;
+    line-height: 35px;
+    font-weight: 400;
+    font-size: 1.2rem;
+    width: 404px;
+}
+
+.header__notify::before {
+    content: "";
+    border-width: 20px 28px ;
+    border-style: solid;
+    border-color: transparent transparent var(--white-color) transparent;
+    position: absolute;
+    right: 0;
+    top: -28px;
+}
+
+
+/* Tạo cầu nối */
+.header__notify::after {
+    content: "";
+    display: block;
+    position: absolute;
+    right: 0;
+    top: -20px;
+    width: 90px;
+    height: 20px;
+}
+@keyframes gowth {
+    from {
+       transform: scale(0);
+       opacity: 0;
+
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.header__notify-list {
+    padding: 0;
+}
+
+.header__notify-item {
+    background-color: #f0dedf;
+}
+
+.header__notify-item:hover {
+    background-color: rgb(189, 189, 189);
+}
+
+.header__notify-link {
+    display: flex;
+    padding: 8px;
+    text-decoration: none ;
+}
+
+.header__notify-img {
+    width: 48px;
+    object-fit: contain;
+    border: 1px solid rgb(206, 205, 205);
+}
+
+.header__notify-info {
+    margin-left: 12px;
+}
+
+.header__notify-name {
+    display: block;
+    font-size: 1.3rem;
+    color: rgb(37, 37, 37);
+    font-weight: 400;
+}
+
+.header__notify-descriotion{
+    display: block;
+    font-size: 1.1rem;
+    color: #666;
+    line-height: 2.5rem;
+}
+
+.header__navbar-list li:hover .header__notify {
+    display: block;
+}
+
+.footer__notify {
+    display: flex;
+}
+
+.footer__notify-text {
+    color: var(--black-color);
+    text-decoration: none;
+    padding: 8px 32px;
+    margin: auto;
+}
