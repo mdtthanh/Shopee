@@ -2,6 +2,10 @@
     --white-color: #fff;
     --black-color: #000;
     --text-color: #333;
+    --navbar-height: 36px;
+    --header-height: 120px;
+    --header-with-search-height: calc(var(--header-height) - var(--navbar-height));
+    --primary-color: #d0151a;
 }
 
 * {
@@ -29,6 +33,20 @@ html {
 .grid__row {
     display: flex;
     flex-wrap: wrap;
+    margin-left: -12px;
+    margin-right: -12px;
+}
+
+.grid__column-2 {
+    padding-left: 12px;
+    padding-right: 12px;
+    width: 16.6667%;
+}
+
+.grid__column-10 {
+    padding-left: 12px;
+    padding-right: 12px;
+    width: 83.3334%;
 }
 
 /* animation */
@@ -41,28 +59,65 @@ html {
     }
 }
 
-/* .modal {
+@keyframes growthto {
+    from {
+        transform: scale(var(--growthto-from));
+    } 
+    to {
+        transform: scale(var(--growthto-to));
+    }
+}
+
+.modal {
     position: fixed;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
     display: flex;
+    animation: fadeIn linear 0.3s;
 }
 
 .modal__overlay {
+    --growthto-from: 0.7;
+    --growthto-to: 1;
     width: 100%;
     height: 100%;
     position: absolute;
     background-color: rgba(0, 0, 0, 0.4);
     z-index: 1;
+    animation: growthto linear 0.1;
 }
 
 .modal__body {
-    width: 400px;
-    height: 480px;
+    /* width: 400px;
+    height: 480px; */
     z-index: 2;
     background-color: rgb(247, 247, 247);
     margin: auto;
+    border-radius: 5px;
+    overflow: hidden;
+
+}
+
+/* Click */
+
+.btn {
+    min-width: 142px;
+    height: 36px;
+    border: none;
     border-radius: 2px;
-} */
+    font-size: 1.4rem;
+    padding: 0;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: rgb(179, 177, 177);
+}
+
+.btn.btn-primary {
+    color: var(--white-color);
+    background-color: #e94218;
+    
+}
